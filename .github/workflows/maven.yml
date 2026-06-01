@@ -21,15 +21,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '21'
+        java-version: '17'
         distribution: 'temurin'
         server-id: github
         settings-path: ${{ github.workspace }}
         cache: maven
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       run: mvn -B package --file pom.xml
 
     #optional: Upload the full depedency to Github to improve the quality of dependabot alerts this repository
